@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blue
   m_EditorClassIdentifier: 
   colorMode: 3
-  topLeft: {r: 0.78974724, g: 0.8867924, b: 0.8758762, a: 1}
-  topRight: {r: 0.21568626, g: 0.5632326, b: 0.8666667, a: 1}
-  bottomLeft: {r: 0.8301887, g: 0.37123528, b: 0.78517973, a: 1}
-  bottomRight: {r: 0.6793231, g: 0.735849, b: 0.18326804, a: 1}
+  topLeft: {r: 0.9150943, g: 0.4178355, b: 0.8220359, a: 1}
+  topRight: {r: 0.74724156, g: 0.8666667, b: 0.21568626, a: 1}
+  bottomLeft: {r: 0.37254903, g: 0.43135315, b: 0.83137256, a: 1}
+  bottomRight: {r: 0.18431373, g: 0.7083989, b: 0.7372549, a: 1}
