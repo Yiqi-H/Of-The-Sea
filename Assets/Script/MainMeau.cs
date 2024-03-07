@@ -22,6 +22,11 @@ public class MainMeau : MonoBehaviour
     //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     //}
 
+    public void AboutGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
+
     
     // Start is called before the first frame update
     public void LoadScene(string scenename)
@@ -34,7 +39,6 @@ public class MainMeau : MonoBehaviour
 
     public void LoadSceneInvoke()
     {
-
 
         SceneManager.LoadScene(SceneName);
 
