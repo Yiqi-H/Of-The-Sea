@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMeau : MonoBehaviour
 {
-    public void PlayGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    string SceneName;
+    //public void PlayGame()
+    //{
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    //}
 
     public void QuitGame()
     {
@@ -16,8 +17,26 @@ public class MainMeau : MonoBehaviour
         Application.Quit();
     }
     
-    public void AboutGame()
+    //public void AboutGame()
+    //{
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    //}
+
+    
+    // Start is called before the first frame update
+    public void LoadScene(string scenename)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneName = scenename;
+        Invoke("LoadSceneInvoke", 4);
+        //SceneManager.LoadScene(scenename);
+
+    }
+
+    public void LoadSceneInvoke()
+    {
+
+
+        SceneManager.LoadScene(SceneName);
+
     }
 }
