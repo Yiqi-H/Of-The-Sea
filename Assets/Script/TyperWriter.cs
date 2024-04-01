@@ -1,11 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-/// <summary>
-/// Created By Junaid Chishti on 2/21/2018
-/// </summary>
-
-
 
 [System.Serializable]
 public class DialogeStory
@@ -33,20 +28,10 @@ public class TyperWriter : MonoBehaviour
     void OnEnable()
     {
         isEnd = false;
-        //  TextPrinterObj.SetActive(true);
         timeLine[0].SetActive(true);
-        //  StartCoroutine(PrintText(storyStrings[0].story, choiceToEnable[0]));
-        StartCoroutine(EnableChoice(0, 30, true));
-
-       // HFPS_GameManager.Instance.GameplayButtonsPanel.SetActive(false);
-        //HFPS_GameManager.Instance.Player.SetActive(false);
+        StartCoroutine(EnableChoice(0, 30, true)); 
 
     }
-
-
-
-
-
 
     IEnumerator PrintText(string[] storyText, GameObject qOoption, int timelineIndex, float startWaitTime = 0f)
     {
@@ -154,9 +139,7 @@ public class TyperWriter : MonoBehaviour
         DisableAllTimeLine();
         timeLine[8].SetActive(true);
         yield return new WaitForSeconds(46f);
-        //HFPS_GameManager.Instance.Player.SetActive(true);
-        //HFPS_GameManager.Instance.ShowCompletePanal();
-
+       
     }
 }
  

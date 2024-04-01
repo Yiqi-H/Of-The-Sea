@@ -372,7 +372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &208406820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -975,7 +975,7 @@ GameObject:
   - component: {fileID: 1040590567}
   - component: {fileID: 1040590568}
   m_Layer: 5
-  m_Name: MainMeau
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1019,7 +1019,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Loading: {fileID: 2047402431}
   PercentageText: {fileID: 1544152566}
-  i: 0
 --- !u!1 &1122167238
 GameObject:
   m_ObjectHideFlags: 0

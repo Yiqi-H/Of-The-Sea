@@ -123,6 +123,85 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &59751572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 59751573}
+  - component: {fileID: 59751575}
+  - component: {fileID: 59751574}
+  m_Layer: 5
+  m_Name: Text (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &59751573
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59751572}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1984685893}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 68.5}
+  m_SizeDelta: {x: 778, y: 533}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &59751574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59751572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.08031893, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 01233acee7edd4a418ea41a204f263f0, type: 3}
+    m_FontSize: 43
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 63
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1.1
+  m_Text: PRESS "SPACE" BUTTON TO CONTINUE..
+--- !u!222 &59751575
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59751572}
+  m_CullTransparentMesh: 1
 --- !u!1 &165733131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1401,6 @@ GameObject:
   - component: {fileID: 1300344770}
   - component: {fileID: 1300344769}
   - component: {fileID: 1300344768}
-  - component: {fileID: 1300344771}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1404,24 +1482,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1300344771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300344767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f89e8e7bd904bb18e076b798a6b338, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StoryPargraphs:
-  - {fileID: 1298070422}
-  - {fileID: 176453921}
-  - {fileID: 690073759}
-  StoryNumber: 0
-  StartGameButton: {fileID: 1679306451}
 --- !u!1 &1356673077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,7 +1788,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1300344771}
+      - m_Target: {fileID: 1855997187}
         m_TargetAssemblyTypeName: StoryScene, Assembly-CSharp
         m_MethodName: OnStartBtn
         m_Mode: 1
@@ -1789,6 +1849,7 @@ GameObject:
   - component: {fileID: 1855997184}
   - component: {fileID: 1855997186}
   - component: {fileID: 1855997185}
+  - component: {fileID: 1855997187}
   m_Layer: 5
   m_Name: StoryCloud
   m_TagString: Untagged
@@ -1811,6 +1872,7 @@ RectTransform:
   - {fileID: 1298070420}
   - {fileID: 176453919}
   - {fileID: 690073757}
+  - {fileID: 1984685893}
   m_Father: {fileID: 165733135}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1856,6 +1918,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855997183}
   m_CullTransparentMesh: 1
+--- !u!114 &1855997187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855997183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f89e8e7bd904bb18e076b798a6b338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StoryPargraphs:
+  - {fileID: 1298070422}
+  - {fileID: 176453921}
+  - {fileID: 690073759}
+  FinalText: {fileID: 1984685894}
+  StoryNumber: 0
+  StartGameButton: {fileID: 1679306451}
 --- !u!1 &1909138335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,6 +2176,92 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1984685892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984685893}
+  - component: {fileID: 1984685895}
+  - component: {fileID: 1984685894}
+  m_Layer: 5
+  m_Name: FinalText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1984685893
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984685892}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 59751573}
+  m_Father: {fileID: 1855997184}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -23.661987, y: 82.640045}
+  m_SizeDelta: {x: -285.1326, y: -238.7968}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1984685894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984685892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 01233acee7edd4a418ea41a204f263f0, type: 3}
+    m_FontSize: 43
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 63
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1.1
+  m_Text: 'Marina, found herself in an unusual and perhaps dangerous scenario one
+    night.
+
+    She awoke in a dream, deep in the unknown depths of the ocean, far
+    from the
+
+    safety of her territory.'
+--- !u!222 &1984685895
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984685892}
+  m_CullTransparentMesh: 1
 --- !u!1 &2146714665
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +2396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StoryPargraphs: []
+  FinalText: {fileID: 0}
   StoryNumber: 0
   StartGameButton: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

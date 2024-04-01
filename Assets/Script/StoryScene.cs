@@ -7,15 +7,18 @@ public class StoryScene : MonoBehaviour
 {
 
     public Text[] StoryPargraphs;
+    public Text FinalText;
     public int StoryNumber = 0;
     public GameObject StartGameButton;
+    string Skip = "space";
+    
     // Start is called before the first frame update
 
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(Skip))
         {
             if (StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StoryComplete)
             {
@@ -31,11 +34,24 @@ public class StoryScene : MonoBehaviour
 
                 else
                 {
+
+                    foreach (Text a in StoryPargraphs)
+                        a.gameObject.SetActive(false);
+                    FinalText.gameObject.SetActive(true);
                     StartGameButton.SetActive(true);
 
 
 
                 }
+            }
+
+            else
+            {
+                StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StopAllCoroutines();
+                StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StoryComplete = true;
+                StoryPargraphs[StoryNumber].transform.GetChild(0).gameObject.SetActive(true);
+                StoryPargraphs[StoryNumber].GetComponent<Text>().text = StoryPargraphs[StoryNumber].GetComponent<TypingStart>().story;
+
             }
 
         }

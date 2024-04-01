@@ -6,26 +6,17 @@ using UnityEngine.UI;
 
 public class TypingStart : MonoBehaviour {
 
- 
-
     Text txt;
-   public string story;
+    public string story;
     public float textTimer;
     public bool StoryComplete = false;
-   
-    
-    
+  
 
     void Start()
     {
         
         Time.timeScale = 1f;
         txt = GetComponent<Text>();
-
-
-
-
-        
         txt.text = " ";
 
         // TODO: add optional delay when to start
@@ -34,7 +25,6 @@ public class TypingStart : MonoBehaviour {
 
     IEnumerator PlayText()
     {
-
         foreach (char c in story)
         {
             txt.text += c;
@@ -43,12 +33,6 @@ public class TypingStart : MonoBehaviour {
         StoryComplete = true;
         transform.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
-
-        
-           
-         
-
-        
 
     }
 }
