@@ -194,7 +194,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        Debug.Log("here");
         if (collision.gameObject.CompareTag("Dolphin"))
         {
             StartCoroutine(FadeColor());
@@ -202,8 +201,16 @@ public class PlayerMovement : MonoBehaviour
             rb.simulated = false;
             DolphinStory.SetActive(true);
             DialogueActive = true;
-
+            Debug.Log("here");
         }
+        
+        ICollectible collectible = collision.GetComponent<ICollectible>();
+        if(collectible != null)
+        {
+            collectible.Collect();
+        }
+
+    
 
 
     }
@@ -260,6 +267,5 @@ public class PlayerMovement : MonoBehaviour
         SceneManager.LoadScene("Menu");
 
     }
-
 
 }
