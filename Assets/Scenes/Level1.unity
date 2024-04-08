@@ -421,7 +421,6 @@ Transform:
   m_GameObject: {fileID: 124421610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.38, y: -2.88, z: 0}
   m_LocalScale: {x: 0.3329, y: 0.3329, z: 0.3329}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4205,7 +4204,18 @@ MonoBehaviour:
   maxY: 3.5
   PauseScreen: {fileID: 1980835678}
   GameOverScreen: {fileID: 0}
+  StoryPargraphs:
+  - {fileID: 1843996111}
+  - {fileID: 437866399}
+  - {fileID: 262607994}
+  - {fileID: 1954501339}
+  - {fileID: 2127475971}
+  - {fileID: 295735681}
+  StoryNumber: 0
   Level1heading: {fileID: 292855658}
+  DolphinStory: {fileID: 722626462}
+  Dolphin: {fileID: 1181813740}
+  DialogueActive: 0
   AttackState: {fileID: 0}
   ShootState: {fileID: 0}
   CanShoot: 0
@@ -4222,6 +4232,7 @@ MonoBehaviour:
   InventoryPanel: {fileID: 0}
   HitPoints: 3
   HitpointsHeart: []
+  jerkMagnitude: 5
   canMove: 1
 --- !u!212 &1719190325
 SpriteRenderer:
@@ -6173,7 +6184,18 @@ MonoBehaviour:
   maxY: 3.5
   PauseScreen: {fileID: 1980835678}
   GameOverScreen: {fileID: 1009318216}
+  StoryPargraphs:
+  - {fileID: 1843996111}
+  - {fileID: 437866399}
+  - {fileID: 262607994}
+  - {fileID: 1954501339}
+  - {fileID: 2127475971}
+  - {fileID: 295735681}
+  StoryNumber: 0
   Level1heading: {fileID: 292855658}
+  DolphinStory: {fileID: 722626462}
+  Dolphin: {fileID: 1181813740}
+  DialogueActive: 0
   AttackState: {fileID: 1719190319}
   ShootState: {fileID: 2007816798}
   CanShoot: 0
@@ -6193,6 +6215,7 @@ MonoBehaviour:
   - {fileID: 1129627030}
   - {fileID: 1781237059}
   - {fileID: 796336049}
+  jerkMagnitude: 5
   canMove: 1
 --- !u!70 &2146714671
 CapsuleCollider2D:

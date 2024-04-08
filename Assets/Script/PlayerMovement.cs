@@ -81,10 +81,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
-        
-
-
             rb.isKinematic = false;
             // Get input for movement and rotation
             float horizontalInput = Input.GetAxis("Horizontal");
@@ -117,8 +113,6 @@ public class PlayerMovement : MonoBehaviour
                 //    rb.rotation = angle;
                 //}
 
-        
-
     }
 
 
@@ -139,9 +133,6 @@ public class PlayerMovement : MonoBehaviour
     {
         PauseScreen.SetActive(false);
         Time.timeScale = 1;
-
-
-
     }
     public void Restart()
     {
@@ -155,8 +146,6 @@ public class PlayerMovement : MonoBehaviour
         Obj.SetActive(false);
 
     }
-
-
 
 
 
@@ -230,14 +219,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Start a coroutine to enable movement after a delay
             StartCoroutine(EnableMovementAfterDelay());
-
-
-
         }
-
-
-        
-        
 
         else if (collision.gameObject.CompareTag("Door"))
         {
