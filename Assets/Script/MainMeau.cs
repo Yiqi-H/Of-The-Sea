@@ -23,8 +23,8 @@ public class MainMeau : MonoBehaviour
         SceneName = scenename;
         //Loading.GetComponent<Loading>().LoadLevel(SceneName);
         StartCoroutine(PercentageCalculator());
-        Invoke("LoadSceneInvoke", 2);
-        Invoke("LoadSceneInvoke", 4);
+        //Invoke("LoadSceneInvoke", 2);
+        //Invoke("LoadSceneInvoke", 4);
         //SceneManager.LoadScene(scenename);
     }
 
@@ -37,13 +37,14 @@ public class MainMeau : MonoBehaviour
     public IEnumerator PercentageCalculator()
     {
         
-        yield return new WaitForSeconds(0.022f);
+        yield return new WaitForSeconds(0.03f);
         i += 1;
-        if (i >= 100)
+        if (i >= 101)
         {
             i = 100;
 
             StopAllCoroutines();
+            LoadSceneInvoke();
         }
         else
         {

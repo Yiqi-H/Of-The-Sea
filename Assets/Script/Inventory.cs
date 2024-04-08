@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class Inventory : MonoBehaviour
@@ -35,6 +36,11 @@ public class Inventory : MonoBehaviour
             InventoryItem newItem = new InventoryItem(itemData);
             inventory.Add(newItem);
             itemDictionary.Add(itemData,newItem);
+            if (itemData.displayName == "Key" && SceneManager.GetActiveScene().name=="Level1")
+            {
+                PlayerPrefs.SetInt("Level1Key", 1);
+                Debug.Log(PlayerPrefs.GetInt("Level1Key"));
+            }
             Debug.Log($"Added{itemData.displayName} to  the inventory for the first time.");
             OnInventoryChange?.Invoke(inventory);
 

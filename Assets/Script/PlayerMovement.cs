@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
@@ -12,13 +14,11 @@ public class PlayerMovement : MonoBehaviour
     public float maxY = 5f;  // Maximum Y position
 
     private Rigidbody2D rb;
-    public GameObject PauseScreen;
-    public Text[] StoryPargraphs;
-    public int StoryNumber = 0;
+    public GameObject PauseScreen,GameOverScreen;
+
     public GameObject Level1heading;
-    public GameObject DolphinStory;
-    public GameObject Dolphin;
-    public bool DialogueActive;
+   
+    
     public GameObject AttackState,ShootState;
     public bool CanShoot = false;
 
@@ -37,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
     public float fadeDuration = 1f; // Duration of the fade
 
     public GameObject LevelEnemiesObject;
+    public GameObject InventoryPanel;
+    public int HitPoints = 3;
+    public GameObject[] HitpointsHeart;
+   
+    public bool canMove = true;
     public static PlayerMovement Instance;
     public static class MyEnumClass
     {
@@ -52,14 +57,34 @@ public class PlayerMovement : MonoBehaviour
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
         timeSinceLastShot = shootCooldown;
+        for (int i = 0; i < HitPoints; i++)
+        {
+            HitpointsHeart[i].SetActive(true);
 
+        }
+
+
+        //
+
+        this.transform.position = PlayerStartPosition.position;
+        if(Level1heading)
+        StartCoroutine(ObjectDisable(Level1heading, 4));
+        StartCoroutine(FadeColorOut());
+        CanShoot = true;
+       
+        LevelEnemiesObject.SetActive(true);
+        InventoryPanel.SetActive(true);
+        //
+
+        Time.timeScale = 1;
     }
 
     void Update()
     {
+        
+        
 
-        if (!DialogueActive)
-        {
+
             rb.isKinematic = false;
             // Get input for movement and rotation
             float horizontalInput = Input.GetAxis("Horizontal");
@@ -92,59 +117,7 @@ public class PlayerMovement : MonoBehaviour
                 //    rb.rotation = angle;
                 //}
 
-        }
-        else
-        {
-            rb.isKinematic = true;
-            if (Input.GetKeyDown(skip))
-            {
-                if (StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StoryComplete)
-                {
-                    if (StoryNumber < StoryPargraphs.Length - 1)
-                    {
-                        StoryNumber += 1;
-                        foreach (Text a in StoryPargraphs)
-                            a.gameObject.SetActive(false);
-
-                        StoryPargraphs[StoryNumber].gameObject.SetActive(true);
-
-                    }
-
-                    else
-                    {
-                        if (DolphinStory.activeInHierarchy)
-                        {
-
-                            Dolphin.SetActive(false);
-
-                        }
-                        this.transform.position = PlayerStartPosition.position;
-                        DolphinStory.SetActive(false);
-                        Level1heading.SetActive(true);
-                        DialogueActive = false;
-                        AttackState.SetActive(true);
-                        rb.simulated = true;
-                        this.GetComponent<SpriteRenderer>().enabled = false;
-                        StartCoroutine(ObjectDisable(Level1heading, 4));
-                        StartCoroutine(FadeColorOut());
-                        CanShoot = true;
-                        //BG.GetComponent<SpriteRenderer>().color = new Color(50, 50, 50, 255);
-                        LevelEnemiesObject.SetActive(true);
-                    }
-                }
-
-                else
-                {
-                    StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StopAllCoroutines();
-                    StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StoryComplete = true;
-                    StoryPargraphs[StoryNumber].transform.GetChild(0).gameObject.SetActive(true);
-                    StoryPargraphs[StoryNumber].GetComponent <Text>().text= StoryPargraphs[StoryNumber].GetComponent<TypingStart>().story;
-                    
-                }
-
-            }
-        }
-
+        
 
     }
 
@@ -170,51 +143,133 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+    public void Restart()
+    {
+        PlayerPrefs.DeleteKey("Level1Key");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
+    }
     public IEnumerator ObjectDisable(GameObject Obj,float wait)
     {
         yield return new WaitForSeconds(wait);
         Obj.SetActive(false);
 
     }
-    
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    Debug.Log("here");
-    //    if (collision.gameObject.CompareTag("Dolphin"))
-    //    {
-    //        rb.simulated = false;
-    //        DolphinStory.SetActive(true);
-    //        Dolphin.GetComponent<CapsuleCollider2D>().enabled = false;
-    //        DialogueActive = true;
 
-    //    }
-    //}
+
+
+
+
+    void ApplyHitEffect(Collider2D other)
+    {
+        // Calculate the direction of the collision force
+        Vector2 forceDirection = ((Vector2)transform.position - (Vector2)other.transform.position).normalized;
+
+        // Calculate a random respawn position opposite to the direction of force
+        float respawnDistance = 2f; // Adjust this value as needed
+        Vector2 randomRespawnDirection = Quaternion.Euler(0, 0, Random.Range(90, 270)) * forceDirection;
+
+        // Calculate the respawn position
+        Vector2 respawnPosition = (Vector2)transform.position + randomRespawnDirection * respawnDistance;
+
+        // Smoothly transition to the respawn position
+        StartCoroutine(MoveToRespawnPosition(respawnPosition));
+    }
+
+    IEnumerator MoveToRespawnPosition(Vector2 targetPosition)
+    {
+        float duration = 0.1f; // Adjust this value to change the duration of the transition
+        float elapsedTime = 0f;
+        Vector2 startPosition = transform.position;
+
+        while (elapsedTime < duration)
+        {
+            transform.position = Vector2.Lerp(startPosition, targetPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition; // Ensure the final position is accurate
+    }
+    IEnumerator EnableMovementAfterDelay()
+    {
+        // Wait for 2 seconds
+        yield return new WaitForSeconds(1f);
+
+        // Allow movement again
+        canMove = true;
+    }
+
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Dolphin"))
+
+        if (collision.gameObject.CompareTag("Enemy") && canMove)
         {
-            StartCoroutine(FadeColor());
-            //BG.GetComponent<SpriteRenderer>().color = new Color(50, 50, 50, 255);
-            rb.simulated = false;
-            DolphinStory.SetActive(true);
-            DialogueActive = true;
-            Debug.Log("here");
-        }
-        
-        ICollectible collectible = collision.GetComponent<ICollectible>();
-        if(collectible != null)
-        {
-            collectible.Collect();
+
+
+
+            HitpointsHeart[HitPoints - 1].GetComponent<Animator>().enabled = true;
+            HitPoints--;
+            if (HitPoints <= 0)
+            {
+                HitPoints = 0;
+
+                Debug.Log("Game_Over");
+                Invoke("Gameover", 1.3f);
+
+            }
+            // Prevent further movement temporarily
+            canMove = false;
+
+            // Apply hit effect immediately
+            ApplyHitEffect(collision);
+
+            // Start a coroutine to enable movement after a delay
+            StartCoroutine(EnableMovementAfterDelay());
+
+
+
         }
 
-    
+
+        
+        
+
+        else if (collision.gameObject.CompareTag("Door"))
+        {
+            if (PlayerPrefs.GetInt("Level1Key") == 1)
+            {
+                Time.timeScale = 0;
+
+                SceneManager.LoadScene("Level2");
+            }
+        }
+
+        else
+        {
+            ICollectible collectible = collision.GetComponent<ICollectible>();
+            if (collectible != null)
+            {
+                collectible.Collect();
+            }
+        }
+
 
 
     }
 
+    void Gameover()
+    {
+
+        GameOverScreen.SetActive(true);
+        Time.timeScale = 0;
+
+
+    }
     public void ResetState()
     {
         ShootState.SetActive(false);

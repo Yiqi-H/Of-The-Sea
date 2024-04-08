@@ -60,7 +60,7 @@ public class StoryScene : MonoBehaviour
 
     public void OnStartBtn() {
 
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("StoryLevel1");
         
 
     }
