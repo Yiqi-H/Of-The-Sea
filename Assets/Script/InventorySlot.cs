@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class InventorySlot : MonoBehaviour
 {
     public Image icon;
     public TextMeshProUGUI labelText;
     public TextMeshProUGUI stackSizeText;
+
+   
+
 
     public void ClearSlot()
     {
@@ -18,6 +22,7 @@ public class InventorySlot : MonoBehaviour
     }
     public void DrawSlot(InventoryItem item)
     {
+        Debug.Log("Hereee.....");
         if(item == null)
         {
             ClearSlot();

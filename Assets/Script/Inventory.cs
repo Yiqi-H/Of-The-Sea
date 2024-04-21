@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
 
     private void OnEnable()
     {
+        DontDestroyOnLoad(this);
         Coin.OnCoinCollected += Add;
         Key.OnKeyCollected += Add;
     }
