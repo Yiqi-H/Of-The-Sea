@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     string shoot = MyEnumClass.Shoot;
     void Start()
     {
+        PlayerPrefs.DeleteKey("Level1Key");
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
         timeSinceLastShot = shootCooldown;
