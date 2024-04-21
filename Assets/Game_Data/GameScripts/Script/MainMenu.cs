@@ -35,24 +35,5 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneName);
 
     }
-    //public IEnumerator PercentageCalculator()
-    //{
-        
-    //    yield return new WaitForSeconds(0.03f);
-    //    i += 1;
-    //    if (i >= 101)
-    //    {
-    //        i = 100;
-
-    //        StopAllCoroutines();
-    //        LoadSceneInvoke();
-    //    }
-    //    else
-    //    {
-
-    //        StartCoroutine(PercentageCalculator());
-
-    //    }
-    //    PercentageText.text = "" + i + " %";
-    //}
+    
 }
