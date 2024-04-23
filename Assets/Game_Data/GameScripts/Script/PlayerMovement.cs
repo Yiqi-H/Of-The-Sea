@@ -123,7 +123,6 @@ public class PlayerMovement : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
     
- 
     public void PauseGame()
     {
         PauseScreen.SetActive(true);
@@ -147,8 +146,6 @@ public class PlayerMovement : MonoBehaviour
         Obj.SetActive(false);
 
     }
-
-
 
     void ApplyHitEffect(Collider2D other)
     {
@@ -190,17 +187,12 @@ public class PlayerMovement : MonoBehaviour
         canMove = true;
     }
 
-
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
 
         if (collision.gameObject.CompareTag("Enemy") && canMove)
         {
-
-
 
             HitpointsHeart[HitPoints - 1].GetComponent<Animator>().enabled = true;
             HitPoints--;
@@ -221,7 +213,6 @@ public class PlayerMovement : MonoBehaviour
             // Start a coroutine to enable movement after a delay
             StartCoroutine(EnableMovementAfterDelay());
         }
-
         else if (collision.gameObject.CompareTag("Door"))
         {
             if (PlayerPrefs.GetInt("Level1Key") == 1)
@@ -231,7 +222,6 @@ public class PlayerMovement : MonoBehaviour
                 SceneManager.LoadScene("Level2");
             }
         }
-
         else
         {
             ICollectible collectible = collision.GetComponent<ICollectible>();
@@ -240,8 +230,6 @@ public class PlayerMovement : MonoBehaviour
                 collectible.Collect();
             }
         }
-
-
 
     }
 
@@ -257,10 +245,7 @@ public class PlayerMovement : MonoBehaviour
     {
         ShootState.SetActive(false);
         AttackState.SetActive(true);
-
-
     }
-
     IEnumerator FadeColor()
     {
         float elapsedTime = 0f;
