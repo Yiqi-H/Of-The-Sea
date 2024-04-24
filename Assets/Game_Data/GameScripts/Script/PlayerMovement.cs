@@ -116,7 +116,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-
     void Shoot()
     {
         // Instantiate the bullet prefab at the fire point position and rotation
@@ -198,8 +197,8 @@ public class PlayerMovement : MonoBehaviour
             HitPoints--;
             if (HitPoints <= 0)
             {
+                FindObjectOfType<AudioManager>().Play("PlayerDeath");
                 HitPoints = 0;
-
                 Debug.Log("Game_Over");
                 Invoke("Gameover", 1.3f);
 
@@ -235,11 +234,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Gameover()
     {
-
         GameOverScreen.SetActive(true);
         Time.timeScale = 0;
-
-
     }
     public void ResetState()
     {
