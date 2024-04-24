@@ -7417,6 +7417,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 07890e5c5c134f84188ee3e4378cf4bd, type: 3}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: dcb804a8f41d3ee4e97e6f257e0b0f19, type: 3}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 181442b75f7e7b147b01c15457a4e429, type: 3}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: fdd92855b6acca44ebfca119a9f9cc09, type: 3}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f57b37b40d89d74883412e0e7906f1b, type: 3}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[4].name
+      value: Collision
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[4].pitch
+      value: 1.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 0.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852034086956603809, guid: 088a58fd45bc76f4b939fdbe8f7e1019, type: 3}
+      propertyPath: sounds.Array.data[4].volume
+      value: 0.297
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -194,6 +194,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             HitpointsHeart[HitPoints - 1].GetComponent<Animator>().enabled = true;
+            FindObjectOfType<AudioManager>().Play("Collision");
             HitPoints--;
             if (HitPoints <= 0)
             {
@@ -218,6 +219,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 Time.timeScale = 0;
 
+                FindObjectOfType<AudioManager>().Play("Door");
+
                 SceneManager.LoadScene("Level2");
             }
         }
@@ -227,6 +230,7 @@ public class PlayerMovement : MonoBehaviour
             if (collectible != null)
             {
                 collectible.Collect();
+                FindObjectOfType<AudioManager>().Play("Pickup");
             }
         }
 
