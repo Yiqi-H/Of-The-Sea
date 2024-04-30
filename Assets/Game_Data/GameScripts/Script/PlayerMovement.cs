@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
     string shoot = MyEnumClass.Shoot;
     void Start()
     {
-        PlayerPrefs.DeleteKey("Level1Key");
+        Inventory.Level1key = false;
         Instance = this;
         rb = GetComponent<Rigidbody2D>();
         timeSinceLastShot = shootCooldown;
@@ -135,7 +135,8 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Restart()
     {
-        PlayerPrefs.DeleteKey("Level1Key");
+        
+        Inventory.Level1key = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
@@ -215,7 +216,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Door"))
         {
-            if (PlayerPrefs.GetInt("Level1Key") == 1)
+
+            
+            if (Inventory.Level1key)
             {
                 Time.timeScale = 0;
 
@@ -223,6 +226,8 @@ public class PlayerMovement : MonoBehaviour
 
                 SceneManager.LoadScene("Level2");
             }
+
+
         }
         else
         {

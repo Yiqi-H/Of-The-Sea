@@ -9,9 +9,12 @@ public class Inventory : MonoBehaviour
     public static event Action<List<InventoryItem>> OnInventoryChange;
     public List<InventoryItem> inventory = new List<InventoryItem>();
     private Dictionary<ItemData,InventoryItem>itemDictionary = new Dictionary<ItemData,InventoryItem>();
-
+    public static bool Level1key = false;
+    public static bool Level2Key = false;
+    
     private void OnEnable()
     {
+       
         DontDestroyOnLoad(this);
         Coin.OnCoinCollected += Add;
         Key.OnKeyCollected += Add;
@@ -19,6 +22,7 @@ public class Inventory : MonoBehaviour
 
     private void OnDisable()
     {
+        
         Coin.OnCoinCollected -= Add;
         Key.OnKeyCollected -= Add;
     }
@@ -39,11 +43,12 @@ public class Inventory : MonoBehaviour
             itemDictionary.Add(itemData,newItem);
             if (itemData.displayName == "Key" && SceneManager.GetActiveScene().name=="Level1")
             {
-                PlayerPrefs.SetInt("Level1Key", 1);
-                Debug.Log(PlayerPrefs.GetInt("Level1Key"));
+                Level1key = true;
+                
             }
             Debug.Log($"Added{itemData.displayName} to  the inventory for the first time.");
             OnInventoryChange?.Invoke(inventory);
+            
 
         }
     }
