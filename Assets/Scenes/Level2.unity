@@ -1031,7 +1031,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.23137257, g: 0.6627451, b: 0.75294125, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1081,7 +1081,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: -1.77, z: -10}
+  m_LocalPosition: {x: -19.7, y: -1.77, z: -10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1102,10 +1102,10 @@ MonoBehaviour:
   target: {fileID: 1503718717}
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: 0}
-  minX: -16.5
-  maxX: 17
-  minY: -2
-  maxY: 3
+  minX: -19.4
+  maxX: 20.3
+  minY: -2.24
+  maxY: 2.72
 --- !u!1001 &536762698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2381,10 +2381,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotationSpeed: 200
-  minX: -24
+  minX: -22.3
   maxX: 24
-  minY: -4
-  maxY: 3.5
+  minY: -4.6
+  maxY: 4.77
   PauseScreen: {fileID: 0}
   GameOverScreen: {fileID: 453183591}
   Level1heading: {fileID: 0}
@@ -3907,15 +3907,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7866297930949180802, guid: 1982dc0909dfd4c47bc8a077ddda1911, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7866297930949180802, guid: 1982dc0909dfd4c47bc8a077ddda1911, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7866297930949180802, guid: 1982dc0909dfd4c47bc8a077ddda1911, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7866297930949180802, guid: 1982dc0909dfd4c47bc8a077ddda1911, type: 3}
       propertyPath: m_AnchoredPosition.x
