@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using FMODUnity;
+using FMOD.Studio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -46,9 +48,10 @@ public class PlayerMovement : MonoBehaviour
     public static class MyEnumClass
     {
         public const string
-            Skip = "space",
-            Shoot = "j";
+        Skip = "space",
+        Shoot = "j";
     }
+    private EventInstance musicEventInstance;
 
     string skip = MyEnumClass.Skip;
     string shoot = MyEnumClass.Shoot;
@@ -63,9 +66,6 @@ public class PlayerMovement : MonoBehaviour
             HitpointsHeart[i].SetActive(true);
 
         }
-
-
-        //
 
         this.transform.position = PlayerStartPosition.position;
         if(Level1heading)
@@ -120,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Instantiate the bullet prefab at the fire point position and rotation
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerShoot,this.transform.position);
     }
     
     public void PauseGame()
@@ -195,10 +196,12 @@ public class PlayerMovement : MonoBehaviour
         {
 
             HitpointsHeart[HitPoints - 1].GetComponent<Animator>().enabled = true;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyHit,this.transform.position);
             HitPoints--;
             if (HitPoints <= 0)
             {
                 HitPoints = 0;
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDeath,this.transform.position);
                 Debug.Log("Game_Over");
                 Invoke("Gameover", 1.3f);
 
@@ -214,14 +217,14 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Door"))
         {
-
-            
             if (Inventory.Level1key)
             {
                 Time.timeScale = 0;
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.doorOpen,this.transform.position);
                 SceneManager.LoadScene("Level2");
+            
+                musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
-
 
         }
         else

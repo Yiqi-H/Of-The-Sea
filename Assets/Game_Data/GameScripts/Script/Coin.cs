@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using FMODUnity;
 
 public class Coin : MonoBehaviour,ICollectible
 {
@@ -12,8 +13,9 @@ public class Coin : MonoBehaviour,ICollectible
 
   public void Collect()
   {
-        Destroy(gameObject);
-        OnCoinCollected?.Invoke(coinData);
+      Destroy(gameObject);
+      AudioManager.instance.PlayOneShot(FMODEvents.instance.coinCollected,this.transform.position);
+      OnCoinCollected?.Invoke(coinData);
 
   }
 }

@@ -133,4 +133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc195ed1e7e44af4fa82a63c2e35f19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinCollectedSound:
+    Guid:
+      Data1: 2014558246
+      Data2: 1232387216
+      Data3: 2039319962
+      Data4: -1546064933
+    Path: event:/CoinCollcted
   coinData: {fileID: 11400000, guid: 1a58a06a26fe2bf41bfdad73c322e5b0, type: 2}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5712653712481586420
+--- !u!1 &386260995337895987
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,94 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 966632392379403527}
-  - component: {fileID: 7852034086956603809}
+  - component: {fileID: 6381009056651932038}
+  - component: {fileID: 3837176272090175550}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6381009056651932038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386260995337895987}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2153078212963377822}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3837176272090175550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386260995337895987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98eb8f9d260461848a0bd045a5b7bbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <coinCollected>k__BackingField:
+    Guid:
+      Data1: 2014558246
+      Data2: 1232387216
+      Data3: 2039319962
+      Data4: -1546064933
+    Path: event:/CoinCollcted
+  <playerShoot>k__BackingField:
+    Guid:
+      Data1: 1117473703
+      Data2: 1098128525
+      Data3: -600371570
+      Data4: 440563923
+    Path: event:/PlayerShoot
+  <playerDeath>k__BackingField:
+    Guid:
+      Data1: 2080460320
+      Data2: 1178111034
+      Data3: -1656493431
+      Data4: 2054635455
+    Path: event:/PlayerDeath
+  <doorOpen>k__BackingField:
+    Guid:
+      Data1: 2080101147
+      Data2: 1256865291
+      Data3: -316496465
+      Data4: 1871630207
+    Path: event:/DoorOpen
+  <enemyHit>k__BackingField:
+    Guid:
+      Data1: -27320350
+      Data2: 1231847891
+      Data3: 1251697322
+      Data4: 19591197
+    Path: event:/EnemyHit
+  <music>k__BackingField:
+    Guid:
+      Data1: -1859316411
+      Data2: 1313692851
+      Data3: 588815768
+      Data4: 1802186292
+    Path: event:/Music/Level
+--- !u!1 &2387832066498583558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2153078212963377822}
+  - component: {fileID: 1336558088689490363}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -17,43 +103,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &966632392379403527
+--- !u!4 &2153078212963377822
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5712653712481586420}
+  m_GameObject: {fileID: 2387832066498583558}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1127.5092, y: 692.39795, z: -9.881173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6381009056651932038}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7852034086956603809
+--- !u!114 &1336558088689490363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5712653712481586420}
+  m_GameObject: {fileID: 2387832066498583558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3099a02cc9f946846b0f39d51fd0213b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0629918bd806c4e4499b629686669ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: Theme
-    clip: {fileID: 8300000, guid: 19b2127a42268cb4a9e9d82548027c2f, type: 3}
-    volume: 0.286
-    pitch: 1.07
-    loop: 1
-    source: {fileID: 0}
-  - name: PlayerDeath
-    clip: {fileID: 8300000, guid: 3e5953aed0305064b8c30a91b3be2884, type: 3}
-    volume: 0.297
-    pitch: 1.31
-    loop: 0
-    source: {fileID: 0}
