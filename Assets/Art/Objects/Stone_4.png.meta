@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 25d499111f36540109d1ff9e96335d2b
+guid: 896e296077271c94182ffe0c8d9b777a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,33 +81,20 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -132,32 +119,25 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
     physicsShape:
-    - - {x: -199, y: -101.5}
-      - {x: -199, y: 101.5}
-      - {x: -162, y: 101.5}
-      - {x: -162, y: -101.5}
-    - - {x: 167, y: -102.5}
-      - {x: 164, y: 101.5}
-      - {x: 200, y: 99.5}
-      - {x: 200, y: -102.5}
+    - - {x: -9, y: -119}
+      - {x: -25, y: -55}
+      - {x: -33, y: -10}
+      - {x: -49, y: 5}
+      - {x: -60, y: 104}
+      - {x: -71, y: 114}
+      - {x: -70, y: 162}
+      - {x: 69, y: 161}
+      - {x: 47, y: 90}
+      - {x: 59, y: 49}
+      - {x: 26, y: -31}
+      - {x: 24, y: -78}
+      - {x: 10, y: -104}
+      - {x: -5, y: -162}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 1537655665

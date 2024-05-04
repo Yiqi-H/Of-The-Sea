@@ -42,7 +42,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject InventoryPanel;
     public int HitPoints = 3;
     public GameObject[] HitpointsHeart;
-   
+    private EventInstance musicEventInstance;
+
     public bool canMove = true;
     public static PlayerMovement Instance;
     public static class MyEnumClass
@@ -51,8 +52,7 @@ public class PlayerMovement : MonoBehaviour
         Skip = "space",
         Shoot = "j";
     }
-    private EventInstance musicEventInstance;
-
+    
     string skip = MyEnumClass.Skip;
     string shoot = MyEnumClass.Shoot;
     void Start()
@@ -204,6 +204,9 @@ public class PlayerMovement : MonoBehaviour
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDeath,this.transform.position);
                 Debug.Log("Game_Over");
                 Invoke("Gameover", 1.3f);
+                print ("StopMusic");
+		        musicEventInstance.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
+		        musicEventInstance.release ();
 
             }
             // Prevent further movement temporarily
@@ -222,11 +225,14 @@ public class PlayerMovement : MonoBehaviour
                 Time.timeScale = 0;
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.doorOpen,this.transform.position);
                 SceneManager.LoadScene("Level2");
-            
-                musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
 
         }
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("we collide it");
+        }
+
         else
         {
             ICollectible collectible = collision.GetComponent<ICollectible>();

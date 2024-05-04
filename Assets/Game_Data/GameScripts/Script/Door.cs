@@ -12,9 +12,7 @@ public class Door : MonoBehaviour
         {
 
             MessageBox.SetActive(true);
-
         }
-
     }
 
 
@@ -24,11 +22,8 @@ public class Door : MonoBehaviour
         {
 
             MessageBox.SetActive(false);
-
         }
     }
-
-    
 
 
 }

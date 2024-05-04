@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0061dcfe42e5524bbb180a9dc1009ba
+guid: 5bc05b386f0a6a945aa4fd07a640991e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -53,7 +53,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -119,40 +119,35 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
-    physicsShape: []
+    physicsShape:
+    - - {x: -203, y: -161}
+      - {x: -199, y: -133}
+      - {x: -165, y: -119}
+      - {x: -150, y: -81}
+      - {x: -113, y: -77}
+      - {x: -92, y: -66}
+      - {x: -124, y: 4}
+      - {x: -72, y: -5}
+      - {x: -58, y: 60}
+      - {x: -24, y: 66}
+      - {x: -9, y: 80}
+      - {x: -12, y: 120}
+      - {x: 42, y: 165}
+      - {x: 46, y: 73}
+      - {x: 61, y: 18}
+      - {x: 94, y: -25}
+      - {x: 105, y: -61}
+      - {x: 98, y: -81}
+      - {x: 118.08615, y: -96.87764}
+      - {x: 179, y: -95}
+      - {x: 203, y: -164}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []

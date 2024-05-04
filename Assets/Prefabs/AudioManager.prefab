@@ -81,11 +81,11 @@ MonoBehaviour:
     Path: event:/EnemyHit
   <music>k__BackingField:
     Guid:
-      Data1: -1859316411
-      Data2: 1313692851
-      Data3: 588815768
-      Data4: 1802186292
-    Path: event:/Music/Level
+      Data1: -1535123604
+      Data2: 1083613081
+      Data3: 478012595
+      Data4: -2008309982
+    Path: event:/Music/Level1Music
 --- !u!1 &2387832066498583558
 GameObject:
   m_ObjectHideFlags: 0

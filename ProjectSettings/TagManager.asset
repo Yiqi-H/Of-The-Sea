@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Dolphin
+  - Door
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -45,4 +47,7 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 499825907
+    locked: 0
+  - name: Obstacle
+    uniqueID: 2610761369
     locked: 0

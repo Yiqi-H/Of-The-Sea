@@ -18,11 +18,13 @@ public class AudioManager : MonoBehaviour
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
         return eventInstance;
+        
     }
 
     private void Start()
     {
         InitializeMusic(FMODEvents.instance.music);
+        //DontDestroyOnLoad(this);
     }
 
     private void Awake()
