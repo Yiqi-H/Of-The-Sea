@@ -145,7 +145,6 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(wait);
         Obj.SetActive(false);
-
     }
 
     void ApplyHitEffect(Collider2D other)
@@ -191,7 +190,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-
         if (collision.gameObject.CompareTag("Enemy") && canMove)
         {
 
@@ -205,8 +203,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("Game_Over");
                 Invoke("Gameover", 1.3f);
                 print ("StopMusic");
-		        musicEventInstance.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
-		        musicEventInstance.release ();
+       
 
             }
             // Prevent further movement temporarily
@@ -228,9 +225,12 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-        else if (collision.gameObject.CompareTag("Obstacle"))
+        else if (collision.gameObject.CompareTag("Obstacle") && canMove)
         {
             Debug.Log("we collide it");
+            canMove = false;
+            ApplyHitEffect(collision);
+            StartCoroutine(EnableMovementAfterDelay());
         }
 
         else
@@ -241,13 +241,15 @@ public class PlayerMovement : MonoBehaviour
                 collectible.Collect();
             }
         }
-
     }
 
     void Gameover()
     {
         GameOverScreen.SetActive(true);
         Time.timeScale = 0;
+        musicEventInstance.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
+		musicEventInstance.release ();
+    
     }
     public void ResetState()
     {
@@ -262,7 +264,6 @@ public class PlayerMovement : MonoBehaviour
             // Calculate the current color based on the elapsed time and lerp between startColor and endColor
             Color currentColor = Color.Lerp(startColor, endColor, elapsedTime / fadeDuration);
             BG.GetComponent<SpriteRenderer>().color = currentColor;
-
             // Increment the elapsed time
             elapsedTime += Time.deltaTime;
 
@@ -296,7 +297,5 @@ public class PlayerMovement : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
-
     }
-
 }

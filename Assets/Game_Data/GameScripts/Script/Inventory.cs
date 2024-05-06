@@ -14,7 +14,6 @@ public class Inventory : MonoBehaviour
     
     private void OnEnable()
     {
-       
         DontDestroyOnLoad(this);
         Coin.OnCoinCollected += Add;
         Key.OnKeyCollected += Add;
@@ -22,7 +21,6 @@ public class Inventory : MonoBehaviour
 
     private void OnDisable()
     {
-        
         Coin.OnCoinCollected -= Add;
         Key.OnKeyCollected -= Add;
     }
@@ -48,8 +46,6 @@ public class Inventory : MonoBehaviour
             }
             Debug.Log($"Added{itemData.displayName} to  the inventory for the first time.");
             OnInventoryChange?.Invoke(inventory);
-            
-
         }
     }
 

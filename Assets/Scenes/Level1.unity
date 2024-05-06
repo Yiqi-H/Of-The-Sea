@@ -407,7 +407,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1329,6 +1329,18 @@ PrefabInstance:
       value: Coin (9)
       objectReference: {fileID: 0}
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.21
       objectReference: {fileID: 0}
@@ -1570,7 +1582,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.015162915, y: -0.05054319}
@@ -1760,6 +1772,18 @@ PrefabInstance:
     - target: {fileID: 5134224594694813971, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1981,6 +2005,18 @@ PrefabInstance:
       value: Coin (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.0652099
       objectReference: {fileID: 0}
@@ -2019,6 +2055,10 @@ PrefabInstance:
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2239,7 +2279,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.015162915, y: -0.05054319}
@@ -2394,6 +2434,18 @@ PrefabInstance:
     - target: {fileID: 5134224594694813971, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_Name
       value: Coin (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2567,6 +2619,18 @@ PrefabInstance:
     - target: {fileID: 5134224594694813971, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_Name
       value: Coin (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2927,7 +2991,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.015162915, y: -0.05054319}
@@ -3265,6 +3329,18 @@ PrefabInstance:
     - target: {fileID: 5134224594694813971, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_Name
       value: Coin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3950,7 +4026,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.015162915, y: -0.05054319}
@@ -4377,6 +4453,18 @@ PrefabInstance:
       value: Coin (5)
       objectReference: {fileID: 0}
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.9052105
       objectReference: {fileID: 0}
@@ -4416,6 +4504,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4437,6 +4529,18 @@ PrefabInstance:
     - target: {fileID: 5134224594694813971, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_Name
       value: Coin (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4582,7 +4686,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.015162915, y: -0.05054319}
@@ -5051,6 +5155,18 @@ PrefabInstance:
       value: Coin (4)
       objectReference: {fileID: 0}
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.37
       objectReference: {fileID: 0}
@@ -5273,7 +5389,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.015162915, y: -0.05054319}
@@ -5379,6 +5495,18 @@ PrefabInstance:
     - target: {fileID: 5134224594694813971, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_Name
       value: Coin (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5874,7 +6002,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.015162915, y: -0.05054319}
@@ -7599,7 +7727,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.6239623, y: 0.00000021278493}
@@ -7725,18 +7853,6 @@ PrefabInstance:
       value: Jellyfish
       objectReference: {fileID: 0}
     - target: {fileID: 5975037027439156594, guid: 8412446ec09764e469d26de3ecb72451, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5975037027439156594, guid: 8412446ec09764e469d26de3ecb72451, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5975037027439156594, guid: 8412446ec09764e469d26de3ecb72451, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5975037027439156594, guid: 8412446ec09764e469d26de3ecb72451, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.9452095
       objectReference: {fileID: 0}
@@ -7775,6 +7891,10 @@ PrefabInstance:
     - target: {fileID: 5975037027439156594, guid: 8412446ec09764e469d26de3ecb72451, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598005200872064938, guid: 8412446ec09764e469d26de3ecb72451, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
