@@ -79,6 +79,13 @@ MonoBehaviour:
       Data3: 1251697322
       Data4: 19591197
     Path: event:/EnemyHit
+  <boxOpen>k__BackingField:
+    Guid:
+      Data1: -496963799
+      Data2: 1312396669
+      Data3: -862987122
+      Data4: 1528150040
+    Path: event:/BoxOpen
   <music>k__BackingField:
     Guid:
       Data1: -1535123604

@@ -227,7 +227,7 @@ public class PlayerMovement : MonoBehaviour
 
         else if(collision.gameObject.CompareTag("Box"))
         {
-          
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.boxOpen,this.transform.position);
             Invoke("Victory", 1f);
 
             Debug.Log("box");

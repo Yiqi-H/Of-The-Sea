@@ -242,6 +242,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-5002581742924297484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BoxOpen
+  m_EditorClassIdentifier: 
+  Path: event:/BoxOpen
+  Guid:
+    Data1: -496963799
+    Data2: 1312396669
+    Data3: -862987122
+    Data4: 1528150040
+  Banks:
+  - {fileID: 8641291393714955366}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-4560128100804038127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,12 +604,13 @@ MonoBehaviour:
   - {fileID: -9197624548843200586}
   - {fileID: -152391425751760935}
   - {fileID: 3820195129448807914}
+  - {fileID: -5002581742924297484}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1598450928318787398}
   StringsBanks:
   - {fileID: 8252398348353886643}
-  cacheTime: 638501176257856728
+  cacheTime: 638508559570423307
   cacheVersion: 131617
 --- !u!114 &124673642434104415
 MonoBehaviour:
@@ -653,7 +681,7 @@ MonoBehaviour:
   Path: ../../../Users/user/Documents/FMOD Studio/Of The Sea/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638501176257483957
+  lastModified: 638508559569482632
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -1211,10 +1239,10 @@ MonoBehaviour:
   Path: ../../../Users/user/Documents/FMOD Studio/Of The Sea/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638501176257493981
+  lastModified: 638508559569508156
   FileSizes:
   - Name: Desktop
-    Value: 1120
+    Value: 1158
   Exists: 1
 --- !u!114 &8641291393714955366
 MonoBehaviour:
@@ -1231,10 +1259,10 @@ MonoBehaviour:
   Path: ../../../Users/user/Documents/FMOD Studio/Of The Sea/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638501042390291787
+  lastModified: 638508559570423307
   FileSizes:
   - Name: Desktop
-    Value: 69248
+    Value: 222112
   Exists: 1
 --- !u!114 &9155158902549705603
 MonoBehaviour:

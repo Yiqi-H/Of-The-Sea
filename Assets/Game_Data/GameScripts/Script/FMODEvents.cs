@@ -20,6 +20,9 @@ public class FMODEvents : MonoBehaviour
     [field:Header("Enemy SFX")]
     [field:SerializeField] public EventReference enemyHit{get;private set;}
 
+    [field:Header("Box SFX")]
+    [field:SerializeField] public EventReference boxOpen{get;private set;}
+
     [field:Header("Music")]
     [field:SerializeField] public EventReference music{get;private set;}
 
