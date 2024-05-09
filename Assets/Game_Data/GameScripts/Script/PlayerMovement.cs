@@ -41,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject InventoryPanel;
     public int HitPoints = 3;
     public GameObject[] HitpointsHeart;
-    private EventInstance musicEventInstance;
  
     public bool canMove = true;
     public static PlayerMovement Instance;
@@ -192,18 +191,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("Game_Over");
                 Invoke("Gameover", 1.3f);
                 print("StopMusic");
-                var result = musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-                if (result != FMOD.RESULT.OK)
-                {
-	                Debug.Log($"Failed to stop event with result: {result}");
-                }
-                result = musicEventInstance.release();
-                if (result != FMOD.RESULT.OK)
-                {
-	                Debug.Log($"Failed to stop event with result: {result}");
-                }
-
-       
+                AudioManager.instance.StopMusic(); 
             }
             // Prevent further movement temporarily
             canMove = false;

@@ -42,5 +42,19 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(sound,worldPos);
     }
 
-   
+    public void StopMusic()
+    {
+        var result = musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
+        if (result != FMOD.RESULT.OK)
+        {
+            Debug.Log($"Failed to stop event with result: {result}");
+        }
+        result = musicEventInstance.release();
+        if (result != FMOD.RESULT.OK)
+        {
+            Debug.Log($"Failed to stop event with result: {result}");
+        }
+    }
+
 }
