@@ -16,11 +16,10 @@ public class PlayerMovement : MonoBehaviour
     public float maxY = 5f;  // Maximum Y position
 
     private Rigidbody2D rb;
-    public GameObject PauseScreen,GameOverScreen;
+    public GameObject PauseScreen,GameOverScreen,VictoryScreen;
 
     public GameObject Level1heading;
    
-    
     public GameObject AttackState,ShootState;
     public bool CanShoot = false;
 
@@ -43,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     public int HitPoints = 3;
     public GameObject[] HitpointsHeart;
     private EventInstance musicEventInstance;
-
+ 
     public bool canMove = true;
     public static PlayerMovement Instance;
     public static class MyEnumClass
@@ -69,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
         this.transform.position = PlayerStartPosition.position;
         if(Level1heading)
-        StartCoroutine(ObjectDisable(Level1heading, 4));
+        StartCoroutine(ObjectDisable(Level1heading, 1));
         StartCoroutine(FadeColorOut());
         CanShoot = true;
        
@@ -98,21 +97,12 @@ public class PlayerMovement : MonoBehaviour
             timeSinceLastShot += Time.deltaTime;
 
             if (Input.GetKeyDown(shoot) && CanShoot && timeSinceLastShot >= shootCooldown)
-            {
-                
+            { 
                 timeSinceLastShot = 0f; // Reset the cooldown timer
                 AttackState.SetActive(false);
                 ShootState.SetActive(true);
                 Invoke("Shoot", 0.5f);
-
             }
-
-                // Rotate the fish based on movement direction
-                //if (movement != Vector2.zero)
-                //{
-                //    float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-                //    rb.rotation = angle;
-                //}
 
     }
 
@@ -136,7 +126,6 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Restart()
     {
-        
         Inventory.Level1key = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
@@ -202,9 +191,19 @@ public class PlayerMovement : MonoBehaviour
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDeath,this.transform.position);
                 Debug.Log("Game_Over");
                 Invoke("Gameover", 1.3f);
-                print ("StopMusic");
-       
+                print("StopMusic");
+                var result = musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                if (result != FMOD.RESULT.OK)
+                {
+	                Debug.Log($"Failed to stop event with result: {result}");
+                }
+                result = musicEventInstance.release();
+                if (result != FMOD.RESULT.OK)
+                {
+	                Debug.Log($"Failed to stop event with result: {result}");
+                }
 
+       
             }
             // Prevent further movement temporarily
             canMove = false;
@@ -225,6 +224,16 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+
+        else if(collision.gameObject.CompareTag("Box"))
+        {
+          
+            Invoke("Victory", 1f);
+
+            Debug.Log("box");
+        }
+
+
         else if (collision.gameObject.CompareTag("Obstacle") && canMove)
         {
             Debug.Log("we collide it");
@@ -247,10 +256,15 @@ public class PlayerMovement : MonoBehaviour
     {
         GameOverScreen.SetActive(true);
         Time.timeScale = 0;
-        musicEventInstance.stop (FMOD.Studio.STOP_MODE.IMMEDIATE);
-		musicEventInstance.release ();
-    
     }
+
+    void Victory()
+    {
+        VictoryScreen.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+  
     public void ResetState()
     {
         ShootState.SetActive(false);
@@ -298,4 +312,5 @@ public class PlayerMovement : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
     }
+
 }
