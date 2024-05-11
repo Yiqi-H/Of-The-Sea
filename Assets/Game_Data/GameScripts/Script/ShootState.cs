@@ -7,8 +7,8 @@ public class ShootState : MonoBehaviour
     public void ResetState()
     {
         
-        PlayerMovement.Instance.ShootState.SetActive(false);
-        PlayerMovement.Instance.AttackState.SetActive(true);
+        PlayerShooting.Instance.ShootState.SetActive(false);
+        PlayerShooting.Instance.AttackState.SetActive(true);
 
 
     }
