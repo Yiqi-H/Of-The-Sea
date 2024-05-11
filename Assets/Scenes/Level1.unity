@@ -685,9 +685,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2146714670}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 979613245}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1280,6 +1280,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2912851696987088828, guid: f79726f1a64f7f944988d002802b5dc6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636576384035718593, guid: f79726f1a64f7f944988d002802b5dc6, type: 3}
+      propertyPath: maxY
+      value: 2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636576384035718593, guid: f79726f1a64f7f944988d002802b5dc6, type: 3}
+      propertyPath: minX
+      value: -18.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636576384035718593, guid: f79726f1a64f7f944988d002802b5dc6, type: 3}
+      propertyPath: minY
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636576384035718593, guid: f79726f1a64f7f944988d002802b5dc6, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2146714667}
     - target: {fileID: 6463670026399627172, guid: f79726f1a64f7f944988d002802b5dc6, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1289,6 +1309,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f79726f1a64f7f944988d002802b5dc6, type: 3}
+--- !u!1 &384802183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4177056967566738131, guid: 1982dc0909dfd4c47bc8a077ddda1911, type: 3}
+  m_PrefabInstance: {fileID: 5422110969364818703}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &437866396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2392,11 +2417,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &969844094 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4177056967566738131, guid: 1982dc0909dfd4c47bc8a077ddda1911, type: 3}
-  m_PrefabInstance: {fileID: 5422110969364818703}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &969844095 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7261768012733038924, guid: 1982dc0909dfd4c47bc8a077ddda1911, type: 3}
@@ -2529,6 +2549,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
   m_PrefabInstance: {fileID: 978149199}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &979613244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 979613246}
+  - component: {fileID: 979613245}
+  m_Layer: 0
+  m_Name: GameStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &979613245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979613244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced5c2a4e5f5c4436a42b5a4914e7a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseScreen: {fileID: 1980835678}
+  gameOverScreen: {fileID: 1009318216}
+  victoryScreen: {fileID: 0}
+  BG: {fileID: 1982677289}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  endColor: {r: 0.14509805, g: 0.14117648, b: 0.14117648, a: 1}
+  OriginalColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  fadeDuration: 4
+  LevelEnemiesObject: {fileID: 1938014952}
+  InventoryPanel: {fileID: 384802183}
+  Level1heading: {fileID: 292855658}
+--- !u!4 &979613246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979613244}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.15, y: -1.7700002, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &981216683
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,8 +2687,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2146714670}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 979613245}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
         m_MethodName: UnPauseGame
         m_Mode: 1
         m_Arguments:
@@ -4028,8 +4103,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2146714670}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 979613245}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
@@ -4703,8 +4778,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2146714670}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 979613245}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
         m_MethodName: OnMainMenu
         m_Mode: 1
         m_Arguments:
@@ -5292,32 +5367,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rotationSpeed: 200
   minX: -8
   maxX: 8
   minY: -3
   maxY: 3.5
-  PauseScreen: {fileID: 1980835678}
-  GameOverScreen: {fileID: 0}
-  VictoryScreen: {fileID: 0}
-  Level1heading: {fileID: 292855658}
-  AttackState: {fileID: 0}
-  ShootState: {fileID: 0}
-  CanShoot: 0
-  shootCooldown: 2
-  bulletPrefab: {fileID: 0}
-  firePoint: {fileID: 0}
-  PlayerStartPosition: {fileID: 0}
-  BG: {fileID: 0}
-  startColor: {r: 0, g: 0, b: 0, a: 0}
-  endColor: {r: 0, g: 0, b: 0, a: 0}
-  OriginalColor: {r: 0, g: 0, b: 0, a: 0}
-  fadeDuration: 1
-  LevelEnemiesObject: {fileID: 0}
-  InventoryPanel: {fileID: 0}
-  HitPoints: 3
-  HitpointsHeart: []
-  canMove: 1
 --- !u!212 &1719190325
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6021,7 +6074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1913326894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6795,8 +6848,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2146714670}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 979613245}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
         m_MethodName: OnMainMenu
         m_Mode: 1
         m_Arguments:
@@ -7074,6 +7127,8 @@ GameObject:
   - component: {fileID: 2146714667}
   - component: {fileID: 2146714666}
   - component: {fileID: 2146714670}
+  - component: {fileID: 2146714672}
+  - component: {fileID: 2146714673}
   - component: {fileID: 2146714668}
   - component: {fileID: 2146714671}
   m_Layer: 0
@@ -7193,35 +7248,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rotationSpeed: 200
   minX: -22.3
   maxX: 24
   minY: -3.7
   maxY: 3.5
-  PauseScreen: {fileID: 1980835678}
-  GameOverScreen: {fileID: 1009318216}
-  VictoryScreen: {fileID: 0}
-  Level1heading: {fileID: 292855658}
-  AttackState: {fileID: 1719190319}
-  ShootState: {fileID: 2007816798}
-  CanShoot: 0
-  shootCooldown: 1
-  bulletPrefab: {fileID: 7777512902025015579, guid: 2fd322811eb8d4cc1a4b7e4c9e04505f, type: 3}
-  firePoint: {fileID: 1346403297}
-  PlayerStartPosition: {fileID: 949039947}
-  BG: {fileID: 1982677289}
-  startColor: {r: 1, g: 1, b: 1, a: 1}
-  endColor: {r: 0.14509805, g: 0.14117648, b: 0.14117648, a: 1}
-  OriginalColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
-  fadeDuration: 4
-  LevelEnemiesObject: {fileID: 1938014952}
-  InventoryPanel: {fileID: 969844094}
-  HitPoints: 3
-  HitpointsHeart:
-  - {fileID: 1129627030}
-  - {fileID: 1781237059}
-  - {fileID: 796336049}
-  canMove: 1
 --- !u!70 &2146714671
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7257,6 +7287,42 @@ CapsuleCollider2D:
   m_Offset: {x: -1.6239623, y: 0.00000021278493}
   m_Size: {x: 10.452113, y: 4.2900133}
   m_Direction: 1
+--- !u!114 &2146714672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146714665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478c4bcac7e2d4100997633390358990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 7777512902025015579, guid: 2fd322811eb8d4cc1a4b7e4c9e04505f, type: 3}
+  firePoint: {fileID: 1346403297}
+  shootCooldown: 1
+  ShootState: {fileID: 2007816798}
+  AttackState: {fileID: 1719190319}
+  CanShoot: 1
+--- !u!114 &2146714673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146714665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0eeb22f18c24b5a9774c02a7cdc62d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitPoints: 3
+  HitpointsHeart:
+  - {fileID: 1129627030}
+  - {fileID: 1781237059}
+  - {fileID: 796336049}
+  canMove: 1
 --- !u!224 &2554391723377946016 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2554391723433957625, guid: d8e954c600a448e4b9f92198db01d78a, type: 3}
@@ -7358,6 +7424,10 @@ PrefabInstance:
     - target: {fileID: 7261768012733038924, guid: 1982dc0909dfd4c47bc8a077ddda1911, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866297930949180802, guid: 1982dc0909dfd4c47bc8a077ddda1911, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -538
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7502,3 +7572,4 @@ SceneRoots:
   - {fileID: 1913326895}
   - {fileID: 124421613}
   - {fileID: 8039240958611208681}
+  - {fileID: 979613246}
