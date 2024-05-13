@@ -11,7 +11,7 @@ public class GameStateManager : MonoBehaviour
 
     public GameObject BG;
 
-    public Color startColor; // Initial color
+    public Color startColor; // Initial color to start with when the scene begins
     public Color endColor;
     public Color OriginalColor;
     public float fadeDuration = 1f; // Duration of the fade
@@ -24,26 +24,19 @@ public class GameStateManager : MonoBehaviour
     {
         Inventory.Level1key = false;
         Instance = this;
-        
-        
-       
 
-       
         if (Level1heading)
-        StartCoroutine(ObjectDisable(Level1heading, 1));
+        {
+            StartCoroutine(ObjectDisable(Level1heading, 1));
+        }
         StartCoroutine(FadeColorOut());
-      
 
         LevelEnemiesObject.SetActive(true);
         InventoryPanel.SetActive(true);
-        //
 
         Time.timeScale = 1;
     }
     
-
-    
-
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -82,26 +75,28 @@ public class GameStateManager : MonoBehaviour
     }
     public IEnumerator ObjectDisable(GameObject Obj, float wait)
     {
+        // Pause the method for wait 
         yield return new WaitForSeconds(wait);
+        // Set the object to inactive and making it disappear from the scene
         Obj.SetActive(false);
     }
-    IEnumerator FadeColor()
-    {
-        float elapsedTime = 0f;
-        while (elapsedTime < fadeDuration)
-        {
-            // Calculate the current color based on the elapsed time and lerp between startColor and endColor
-            Color currentColor = Color.Lerp(startColor, endColor, elapsedTime / fadeDuration);
-            BG.GetComponent<SpriteRenderer>().color = currentColor;
-            // Increment the elapsed time
-            elapsedTime += Time.deltaTime;
+    //IEnumerator FadeColor()
+    //{
+    //    float elapsedTime = 0f;
+    //    while (elapsedTime < fadeDuration)
+    //    {
+    //        // Calculate the current color based on the elapsed time and lerp between startColor and endColor
+    //        Color currentColor = Color.Lerp(startColor, endColor, elapsedTime / fadeDuration);
+    //        BG.GetComponent<SpriteRenderer>().color = currentColor;
+    //        // Increment the elapsed time
+    //        elapsedTime += Time.deltaTime;
 
-            yield return null;
-        }
+    //        yield return null;
+    //    }
 
-        // Ensure the color is set to the endColor when the fade completes
-        BG.GetComponent<SpriteRenderer>().color = endColor;
-    }
+    //    // Ensure the color is set to the endColor when the fade completes
+    //    BG.GetComponent<SpriteRenderer>().color = endColor;
+    //}
 
     IEnumerator FadeColorOut()
     {
@@ -118,7 +113,7 @@ public class GameStateManager : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the color is set to the endColor when the fade completes
+        // Ensure the color is set to the original color when the fade completes
         BG.GetComponent<SpriteRenderer>().color = OriginalColor;
     }
 }
