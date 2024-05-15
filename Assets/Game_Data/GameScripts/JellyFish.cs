@@ -27,7 +27,7 @@ public class Jellyfish : MonoBehaviour
         float yOffset = floatMagnitude * Mathf.Sin(Time.time * floatSpeed);
         transform.position = new Vector3(transform.position.x, startPos.y + yOffset, transform.position.z);
 
-        // Move horizontally
+        // Move horizontally jellyfish
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
 
         // Check if it's time to change direction
