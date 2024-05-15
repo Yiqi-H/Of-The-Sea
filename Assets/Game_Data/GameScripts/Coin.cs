@@ -13,8 +13,11 @@ public class Coin : MonoBehaviour,ICollectible
 
   public void Collect()
   {
-      Destroy(gameObject);
-      AudioManager.instance.PlayOneShot(FMODEvents.instance.coinCollected,this.transform.position);
+        if (AudioManager.instance)
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.coinCollected, this.transform.position);
+
+        Destroy(gameObject);
+        
       OnCoinCollected?.Invoke(coinData);
 
   }

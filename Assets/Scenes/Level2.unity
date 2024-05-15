@@ -1435,8 +1435,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1503718715}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 1598244363}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
         m_MethodName: OnMainMenu
         m_Mode: 1
         m_Arguments:
@@ -1913,11 +1913,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5239889655731125271, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
   m_PrefabInstance: {fileID: 536762698}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &584968580 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5134224594694813971, guid: 981176df965bb2b4eb20e628fc07c2cc, type: 3}
-  m_PrefabInstance: {fileID: 329203049}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &638827860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,9 +2109,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1503718715}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 1598244363}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4037,6 +4032,8 @@ GameObject:
   - component: {fileID: 1503718717}
   - component: {fileID: 1503718716}
   - component: {fileID: 1503718715}
+  - component: {fileID: 1503718720}
+  - component: {fileID: 1503718719}
   - component: {fileID: 1503718714}
   - component: {fileID: 1503718713}
   - component: {fileID: 1503718718}
@@ -4107,7 +4104,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.31471214, y: 0.691826}
-  m_Size: {x: 6.0205755, y: 8.896344}
+  m_Size: {x: 6.0205755, y: 2.29}
   m_Direction: 0
 --- !u!114 &1503718715
 MonoBehaviour:
@@ -4122,35 +4119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rotationSpeed: 200
   minX: -22.3
   maxX: 24
   minY: -4.6
   maxY: 4.77
-  PauseScreen: {fileID: 0}
-  GameOverScreen: {fileID: 453183591}
-  VictoryScreen: {fileID: 1334726444}
-  Level1heading: {fileID: 0}
-  AttackState: {fileID: 1989107708}
-  ShootState: {fileID: 65311266}
-  CanShoot: 1
-  shootCooldown: 1
-  bulletPrefab: {fileID: 7777512902025015579, guid: 2fd322811eb8d4cc1a4b7e4c9e04505f, type: 3}
-  firePoint: {fileID: 195098970}
-  PlayerStartPosition: {fileID: 1531300706}
-  BG: {fileID: 765016279}
-  startColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
-  endColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  OriginalColor: {r: 1, g: 1, b: 1, a: 1}
-  fadeDuration: 1
-  LevelEnemiesObject: {fileID: 584968580}
-  InventoryPanel: {fileID: 584968580}
-  HitPoints: 3
-  HitpointsHeart:
-  - {fileID: 2106197771}
-  - {fileID: 2106197770}
-  - {fileID: 2106197769}
-  canMove: 1
 --- !u!212 &1503718716
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4213,7 +4185,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.7328, y: -3.7846, z: 0}
-  m_LocalScale: {x: 0.20954338, y: 0.19366568, z: 0.3}
+  m_LocalScale: {x: 0.27372, y: 0.24903, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1989107713}
@@ -4317,6 +4289,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1503718719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503718712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0eeb22f18c24b5a9774c02a7cdc62d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitPoints: 3
+  HitpointsHeart:
+  - {fileID: 2106197771}
+  - {fileID: 2106197770}
+  - {fileID: 2106197769}
+  canMove: 1
+--- !u!114 &1503718720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503718712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478c4bcac7e2d4100997633390358990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 7777512902025015579, guid: 2fd322811eb8d4cc1a4b7e4c9e04505f, type: 3}
+  firePoint: {fileID: 195098970}
+  shootCooldown: 1
+  ShootState: {fileID: 65311266}
+  AttackState: {fileID: 1989107708}
+  CanShoot: 1
 --- !u!1 &1506863397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4627,6 +4635,61 @@ Transform:
   - {fileID: 1850833040}
   - {fileID: 924441807}
   - {fileID: 1981248190}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1598244362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598244364}
+  - component: {fileID: 1598244363}
+  m_Layer: 0
+  m_Name: GameStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1598244363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598244362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced5c2a4e5f5c4436a42b5a4914e7a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseScreen: {fileID: 0}
+  gameOverScreen: {fileID: 453183591}
+  victoryScreen: {fileID: 1334726444}
+  BG: {fileID: 765016279}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  endColor: {r: 0.14509805, g: 0.14117648, b: 0.14117648, a: 1}
+  OriginalColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  fadeDuration: 4
+  LevelEnemiesObject: {fileID: 1153313556}
+  InventoryPanel: {fileID: 1153313556}
+  Level1heading: {fileID: 0}
+--- !u!4 &1598244364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598244362}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.15, y: -1.7700002, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1607837234
@@ -5135,8 +5198,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1503718715}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 1598244363}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
         m_MethodName: OnMainMenu
         m_Mode: 1
         m_Arguments:
@@ -6206,32 +6269,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rotationSpeed: 200
   minX: -8
   maxX: 8
   minY: -3
   maxY: 3.5
-  PauseScreen: {fileID: 0}
-  GameOverScreen: {fileID: 0}
-  VictoryScreen: {fileID: 0}
-  Level1heading: {fileID: 0}
-  AttackState: {fileID: 0}
-  ShootState: {fileID: 0}
-  CanShoot: 0
-  shootCooldown: 2
-  bulletPrefab: {fileID: 0}
-  firePoint: {fileID: 0}
-  PlayerStartPosition: {fileID: 0}
-  BG: {fileID: 0}
-  startColor: {r: 0, g: 0, b: 0, a: 0}
-  endColor: {r: 0, g: 0, b: 0, a: 0}
-  OriginalColor: {r: 0, g: 0, b: 0, a: 0}
-  fadeDuration: 1
-  LevelEnemiesObject: {fileID: 0}
-  InventoryPanel: {fileID: 0}
-  HitPoints: 3
-  HitpointsHeart: []
-  canMove: 1
 --- !u!212 &1989107712
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7092,3 +7133,4 @@ SceneRoots:
   - {fileID: 984778660}
   - {fileID: 1561264446}
   - {fileID: 685911984}
+  - {fileID: 1598244364}

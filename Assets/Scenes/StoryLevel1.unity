@@ -1051,7 +1051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deae339a7dc8df847840667a88229bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyText: {fileID: 342889115}
 --- !u!1 &347381423
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,7 +3167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1346403297
 Transform:
   m_ObjectHideFlags: 0
@@ -4782,7 +4781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74d87459fdfe2d47a6a8d711b647813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1972075238}
 --- !u!114 &1972075238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5748,7 +5746,7 @@ SpriteRenderer:
   m_SortingLayerID: 499825907
   m_SortingLayer: 1
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: b5c31589c28b74f57a25dd920daf8e6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b0a7efeae5a44a89a115fe401366a90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
