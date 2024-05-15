@@ -1236,6 +1236,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2009372025702682744, guid: f79726f1a64f7f944988d002802b5dc6, type: 3}
+      propertyPath: attenuationObject
+      value: 
+      objectReference: {fileID: 2146714665}
     - target: {fileID: 2133673458159296052, guid: f79726f1a64f7f944988d002802b5dc6, type: 3}
       propertyPath: orthographic size
       value: 3
