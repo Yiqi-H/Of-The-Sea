@@ -14,8 +14,9 @@ public class StoryLevelPlayer : MonoBehaviour
     public float minY = -5f; // Minimum Y position
     public float maxY = 5f;  // Maximum Y position
 
-
+    // Array of Text components that hold the story to be displayed
     public Text[] StoryPargraphs;
+    // Index of the current story
     public int StoryNumber = 0;
     public GameObject Level1heading;
     public GameObject DolphinStory;
@@ -34,22 +35,19 @@ public class StoryLevelPlayer : MonoBehaviour
     {
         public const string
             Skip = "space";
-            
     }
-
 
     string skip = MyEnumClass.Skip;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        // Check if there is no active dialogue in the game
         if (!DialogueActive)
         {
             rb.isKinematic = false;
@@ -61,7 +59,7 @@ public class StoryLevelPlayer : MonoBehaviour
             Vector2 movement = new Vector2(horizontalInput, verticalInput);
             rb.velocity = movement * speed;
 
-            // Clamp the position
+            // Clamp the position, limit the player x and y position to stay within predefined boundaries
             float clampedX = Mathf.Clamp(rb.position.x, minX, maxX);
             float clampedY = Mathf.Clamp(rb.position.y, minY, maxY);
             rb.position = new Vector2(clampedX, clampedY);
@@ -74,24 +72,24 @@ public class StoryLevelPlayer : MonoBehaviour
             {
                 if (StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StoryComplete)
                 {
+                    // Check if the current story text is fully displayed
                     if (StoryNumber < StoryPargraphs.Length - 1)
                     {
+                        // Check if there are more texts left
                         StoryNumber += 1;
+                        // Disable all texts
                         foreach (Text a in StoryPargraphs)
                             a.gameObject.SetActive(false);
-
+                        // Enable the next text
                         StoryPargraphs[StoryNumber].gameObject.SetActive(true);
-
                     }
 
                     else
                     {
-
+                        // Check if the DolphinStory is currently active
                         if (DolphinStory.activeInHierarchy)
                         {
-
                             Dolphin.SetActive(false);
-
                         }
                         this.transform.position = PlayerStartPosition.position;
                         DolphinStory.SetActive(false);
@@ -105,27 +103,24 @@ public class StoryLevelPlayer : MonoBehaviour
                         StartCoroutine(FadeColorOut());
                         //SceneManager.LoadScene("Level1");
                         //BG.GetComponent<SpriteRenderer>().color = new Color(50, 50, 50, 255);
-
                     }
                 }
 
                 else
                 {
+                    // If the story is not complete mark it as complete and update the text
                     StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StopAllCoroutines();
                     StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StoryComplete = true;
                     StoryPargraphs[StoryNumber].transform.GetChild(0).gameObject.SetActive(true);
+                    // Update the text of the current story paragraph to show the complete story. 
                     StoryPargraphs[StoryNumber].GetComponent<Text>().text = StoryPargraphs[StoryNumber].GetComponent<TypingStart>().story;
-
                 }
-
             }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.gameObject.CompareTag("Dolphin"))
         {
             StartCoroutine(FadeColor());
@@ -135,11 +130,6 @@ public class StoryLevelPlayer : MonoBehaviour
             DialogueActive = true;
             Debug.Log("here");
         }
-
-        
-
-
-
     }
 
     public void PauseGame()
@@ -152,9 +142,6 @@ public class StoryLevelPlayer : MonoBehaviour
     {
         PauseScreen.SetActive(false);
         Time.timeScale = 1;
-
-
-
     }
     public void OnMainMenu()
     {
@@ -162,11 +149,6 @@ public class StoryLevelPlayer : MonoBehaviour
         SceneManager.LoadScene("Menu");
 
     }
-   
-
-
-    
-
     IEnumerator FadeColor()
     {
         float elapsedTime = 0f;
@@ -174,7 +156,7 @@ public class StoryLevelPlayer : MonoBehaviour
         {
             // Calculate the current color based on the elapsed time and lerp between startColor and endColor
             Color currentColor = Color.Lerp(startColor, endColor, elapsedTime / fadeDuration);
-            
+
             BG.GetComponent<SpriteRenderer>().color = new Color(currentColor.r, currentColor.g, currentColor.b, 255);
             // Increment the elapsed time
             elapsedTime += Time.deltaTime;
@@ -186,7 +168,6 @@ public class StoryLevelPlayer : MonoBehaviour
         //BG.GetComponent<SpriteRenderer>().color = endColor;
         BG.GetComponent<SpriteRenderer>().color = new Color(endColor.r, endColor.g, endColor.b, 255);
     }
-
     IEnumerator FadeColorOut()
     {
         float elapsedTime = 0f;

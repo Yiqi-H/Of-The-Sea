@@ -404,9 +404,9 @@ RectTransform:
   - {fileID: 969844095}
   - {fileID: 1356673078}
   - {fileID: 292855659}
-  - {fileID: 1980835679}
   - {fileID: 1009318217}
   - {fileID: 722626463}
+  - {fileID: 1980835679}
   - {fileID: 1972075236}
   - {fileID: 342889114}
   m_Father: {fileID: 0}
@@ -3847,32 +3847,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rotationSpeed: 200
   minX: -8
   maxX: 8
   minY: -3
   maxY: 3.5
-  PauseScreen: {fileID: 1980835678}
-  GameOverScreen: {fileID: 0}
-  VictoryScreen: {fileID: 0}
-  Level1heading: {fileID: 292855658}
-  AttackState: {fileID: 0}
-  ShootState: {fileID: 0}
-  CanShoot: 0
-  shootCooldown: 2
-  bulletPrefab: {fileID: 0}
-  firePoint: {fileID: 0}
-  PlayerStartPosition: {fileID: 0}
-  BG: {fileID: 0}
-  startColor: {r: 0, g: 0, b: 0, a: 0}
-  endColor: {r: 0, g: 0, b: 0, a: 0}
-  OriginalColor: {r: 0, g: 0, b: 0, a: 0}
-  fadeDuration: 1
-  LevelEnemiesObject: {fileID: 0}
-  InventoryPanel: {fileID: 0}
-  HitPoints: 3
-  HitpointsHeart: []
-  canMove: 1
 --- !u!212 &1719190325
 SpriteRenderer:
   m_ObjectHideFlags: 0
