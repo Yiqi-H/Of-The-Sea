@@ -20,48 +20,45 @@ public class StoryScene : MonoBehaviour
     {
         if (Input.GetKeyDown(Skip))
         {
+            // if the current story text is marked as complete
             if (StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StoryComplete)
             {
+                // Check if there are more text to show
                 if (StoryNumber < StoryPargraphs.Length - 1)
                 {
+                    // Move to the next text
                     StoryNumber += 1;
+                    // deactive all the next paragrapghs
                     foreach (Text a in StoryPargraphs)
                         a.gameObject.SetActive(false);
-
+                    // Activate the next text
                     StoryPargraphs[StoryNumber].gameObject.SetActive(true);
-
                 }
 
                 else
                 {
-
+                    // If there are no more text deactivate all and show the final text
                     foreach (Text a in StoryPargraphs)
                         a.gameObject.SetActive(false);
                     FinalText.gameObject.SetActive(true);
                     StartGameButton.SetActive(true);
-
-
-
                 }
             }
 
             else
             {
                 StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StopAllCoroutines();
+                // Mark the current story as completely shown.
                 StoryPargraphs[StoryNumber].GetComponent<TypingStart>().StoryComplete = true;
                 StoryPargraphs[StoryNumber].transform.GetChild(0).gameObject.SetActive(true);
+                // Display all the text of the current story immediately, without typing effect.
                 StoryPargraphs[StoryNumber].GetComponent<Text>().text = StoryPargraphs[StoryNumber].GetComponent<TypingStart>().story;
-
             }
-
         }
-
     }
 
-    public void OnStartBtn() {
-
+    public void OnStartBtn() 
+    {
         SceneManager.LoadScene("StoryLevel1");
-        
-
     }
 }
