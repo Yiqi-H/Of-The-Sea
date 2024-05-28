@@ -28,13 +28,15 @@ public class FMODEvents : MonoBehaviour
 
     public static FMODEvents instance{get;private set;}
 
-    private void Awake()
+   private void Awake()
     {
-        if(instance != null)
+        if(instance != null && instance != this)
         {
-            Debug.LogError("Found more than one FMOD Events instance ");
+            Destroy(this.gameObject);
         }
-
-        instance = this;
+        else
+        {
+            instance = this;
+        }
     }
 }

@@ -26,15 +26,16 @@ public class AudioManager : MonoBehaviour
         InitializeMusic(FMODEvents.instance.music);
         DontDestroyOnLoad(this);
     }
-
     private void Awake()
     {
-        if(instance != null)
+        if(instance != null && instance != this)
         {
-            Debug.LogError("Found more than one Audio Manager");
+            Destroy(this.gameObject);
         }
-
-        instance = this;
+        else
+        {
+            instance = this;
+        }
     }
 
     public void PlayOneShot(EventReference sound,Vector3 worldPos)
