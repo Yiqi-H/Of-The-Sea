@@ -5,24 +5,18 @@ using System;
 
 public class Key : MonoBehaviour,ICollectible
 {
+    //Define a delegate type for the key collected event
     public static event HandleKeyCollected OnKeyCollected;
+    //Define a static event based on the HandleKeyCollected delegate.
     public delegate void HandleKeyCollected(ItemData itemData);
     public ItemData keyData;
-
 
     public void Collect()
     {
         Destroy(gameObject);
+        //Invole the OnKeyCollected event,passing in the keyData.
         OnKeyCollected?.Invoke(keyData);
 
     }
 
-    //public static event Action OnKeyCollected;
-
-    //public void Collect()
-    //{
-       // Debug.Log("Key collected");
-        //Destroy(gameObject);
-        //OnKeyCollected?.Invoke();
-    //}
 }

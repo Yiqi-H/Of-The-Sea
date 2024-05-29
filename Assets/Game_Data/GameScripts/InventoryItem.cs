@@ -12,6 +12,7 @@ public class InventoryItem
     public InventoryItem(ItemData item)
     {
         itemData = item;
+        //Initializes stackSize to 1 when a new InventoryItem is created
         AddToStack();
     }
 
