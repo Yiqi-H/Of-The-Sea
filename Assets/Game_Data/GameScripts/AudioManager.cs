@@ -28,14 +28,12 @@ public class AudioManager : MonoBehaviour
     }
     private void Awake()
     {
-        if(instance != null && instance != this)
+        if(instance == null && instance != this)
         {
-            Destroy(this.gameObject);
-        }
-        else
-        {
+            Destroy(instance);
             instance = this;
         }
+        
     }
 
     public void PlayOneShot(EventReference sound,Vector3 worldPos)

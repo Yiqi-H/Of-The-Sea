@@ -26,8 +26,6 @@ public class PlayerCollision : MonoBehaviour
                 Debug.Log("Game_Over");
                 GameStateManager.Instance.SetGameOver(1.3f);
                 print("StopMusic");
-                if (AudioManager.instance)
-                    AudioManager.instance.StopMusic();
             }
             // Prevent further movement temporarily
             canMove = false;
