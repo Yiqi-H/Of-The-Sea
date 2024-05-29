@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     private Dictionary<ItemData,InventoryItem>itemDictionary = new Dictionary<ItemData,InventoryItem>();
     public static bool Level1key = false;
     public static bool Level2Key = false;
-    
+    public static int coindata=0;
     private void OnEnable()
     {
         DontDestroyOnLoad(this);
@@ -31,6 +31,13 @@ public class Inventory : MonoBehaviour
         {
             item.AddToStack();
             Debug.Log($"{item.itemData.displayName} total stack is now{item.stackSize}");
+            if (itemData.displayName == "Coin")
+            {
+                coindata++;
+                Debug.LogError("Coin_Collected");
+
+
+            }
             OnInventoryChange?.Invoke(inventory);
         }
 

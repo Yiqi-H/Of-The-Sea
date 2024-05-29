@@ -8,6 +8,8 @@ public class PlayerCollision : MonoBehaviour
     public GameObject[] HitpointsHeart;
 
     public bool canMove = true;
+
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -48,7 +50,7 @@ public class PlayerCollision : MonoBehaviour
 
         }
 
-        else if (collision.gameObject.CompareTag("Box"))
+        else if (collision.gameObject.CompareTag("Box") && Inventory.coindata >= 17)
         {
             if (AudioManager.instance)
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.boxOpen, this.transform.position);
@@ -72,6 +74,7 @@ public class PlayerCollision : MonoBehaviour
             if (collectible != null)
             {
                 collectible.Collect();
+                Debug.Log("Coins");
             }
         }
     }
