@@ -331,11 +331,11 @@ MonoBehaviour:
   - {fileID: 7717019414818713792}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 83513
+  Length: 85000
 --- !u!114 &-5365579895275002210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   - {fileID: -2540242537460171178}
   StringsBanks:
   - {fileID: -3572164670946780612}
-  cacheTime: 638508559570423307
+  cacheTime: 638526283992570725
   cacheVersion: 131617
 --- !u!114 &124673642434104415
 MonoBehaviour:
@@ -2140,7 +2140,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Of The Sea/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638508559570423307
+  lastModified: 638526283992570725
   FileSizes:
   - Name: Desktop
     Value: 222112
@@ -2247,10 +2247,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Of The Sea/Build/Desktop/Level1.bank
   Name: Level1
   StudioPath: bank:/Level1
-  lastModified: 638501176257856728
+  lastModified: 638526283988873322
   FileSizes:
   - Name: Desktop
-    Value: 922112
+    Value: 922240
   Exists: 1
 --- !u!114 &8056783621467522079
 MonoBehaviour:
