@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8297059958864787936
+--- !u!1 &4435973543478585264
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6605027970072677924}
-  - component: {fileID: -2871062203072134660}
+  - component: {fileID: 3051495513743661332}
+  - component: {fileID: 5971546544711660541}
   m_Layer: 0
-  m_Name: LevelManagerWithPersist
+  m_Name: GameStateManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6605027970072677924
+--- !u!4 &3051495513743661332
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8297059958864787936}
+  m_GameObject: {fileID: 4435973543478585264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1302.3423, y: 329.36298, z: -7.0487523}
+  m_LocalPosition: {x: -19.15, y: -1.7700002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-2871062203072134660
+--- !u!114 &5971546544711660541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8297059958864787936}
+  m_GameObject: {fileID: 4435973543478585264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c0f3f4d3798ac44cb21e0f6e0f288c9, type: 3}
+  m_Script: {fileID: 11500000, guid: ced5c2a4e5f5c4436a42b5a4914e7a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousLevel: 
-  currentLevel: 
+  pauseScreen: {fileID: 0}
+  gameOverScreen: {fileID: 0}
+  victoryScreen: {fileID: 0}
+  BG: {fileID: 0}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  endColor: {r: 0.14509805, g: 0.14117648, b: 0.14117648, a: 1}
+  OriginalColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+  fadeDuration: 4
+  LevelEnemiesObject: {fileID: 0}
+  InventoryPanel: {fileID: 0}
+  Level1heading: {fileID: 0}
